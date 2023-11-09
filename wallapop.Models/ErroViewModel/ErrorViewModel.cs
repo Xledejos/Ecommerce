@@ -1,4 +1,4 @@
-namespace wallapop.Models
+namespace wallapop.Models.ErroViewModel
 {
     public class ErrorViewModel
     {

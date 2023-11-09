@@ -1,22 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-wallapop-a4bdf5db-ae97-45d6-8eab-b3dbf1e8c9ce</UserSecretsId>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.13" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\wallapop.AccessData\wallapop.AccessData.csproj" />
+    <Folder Include="Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\wallapop.Models\wallapop.Models.csproj" />
     <ProjectReference Include="..\wallapop.Utilities\wallapop.Utilities.csproj" />
   </ItemGroup>

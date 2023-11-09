@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using wallapop.Data;
+using wallapop.AccessData.DbContext;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using wallapop.Models;
+using wallapop.Models.ErroViewModel;
 
 namespace wallapop.Controllers
 {
