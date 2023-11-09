@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wallapop", "wallapop\wallapop.csproj", "{343B0FA3-DA7C-4086-88F0-73DCCF6BFBFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{343B0FA3-DA7C-4086-88F0-73DCCF6BFBFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343B0FA3-DA7C-4086-88F0-73DCCF6BFBFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343B0FA3-DA7C-4086-88F0-73DCCF6BFBFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343B0FA3-DA7C-4086-88F0-73DCCF6BFBFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8117C3F0-6C64-4316-89E2-9ACB93C08F3C}
+	EndGlobalSection
+EndGlobal
