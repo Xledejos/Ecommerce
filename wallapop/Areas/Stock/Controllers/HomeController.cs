@@ -2,8 +2,9 @@
 using System.Diagnostics;
 using wallapop.Models.ErroViewModel;
 
-namespace wallapop.Controllers
+namespace wallapop.Areas.Stock.Controllers
 {
+    [Area("Stock")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
