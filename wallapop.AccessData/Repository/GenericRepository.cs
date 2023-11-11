@@ -11,7 +11,7 @@ using wallapop.AccessData.Repository.IRepository;
 namespace wallapop.AccessData.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T>
-        where T : class
+        where T : class, IEquatable<int>
     {
         private readonly ApplicationDbContext _context;
         protected DbSet<T> Entities => _context.Set<T>();
@@ -21,17 +21,62 @@ namespace wallapop.AccessData.Repository
             _context = context;
         }
 
-        public Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> filtro = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null, bool isTracking = true)
+        public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> filtro = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null, bool isTracking = true)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = Entities;
+
+            if(filtro != null)
+            {
+                query = query.Where(filtro);
+            }
+
+            if(includeProperties != null)
+            {
+                foreach(var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProperty);
+                }
+            }
+
+            if(orderBy != null)
+            {
+                query = orderBy(query);
+            }
+
+            if (!isTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task<T?> GetById(int id)
             => await Entities.FindAsync(id);
 
-        public Task<T> GetFirst(Expression<Func<T, bool>> filtro = null, string includeProperties = null, bool isTracking = true)
+        public async Task<T> GetFirst(Expression<Func<T, bool>> filtro = null, string includeProperties = null, bool isTracking = true)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = Entities;
+
+            if (filtro != null)
+            {
+                query = query.Where(filtro);
+            }
+
+            if (includeProperties != null)
+            {
+                foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProperty);
+                }
+            }
+
+            if (!isTracking)
+            {
+                query = query.AsNoTracking();
+            }
+
+            return await query.FirstOrDefaultAsync();
         }
 
         public async Task Insert(T entity)
@@ -41,12 +86,12 @@ namespace wallapop.AccessData.Repository
 
         public void Remove(T entity)
         {
-            throw new NotImplementedException();
+            Entities.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entity)
         {
-            throw new NotImplementedException();
+            Entities.RemoveRange(entity);
         }
     }
 }
