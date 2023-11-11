@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using wallapop.Models.Models;
 
 namespace wallapop.AccessData.DbContext
 {
@@ -9,5 +10,7 @@ namespace wallapop.AccessData.DbContext
             : base(options)
         {
         }
+
+        public DbSet<Category> Categories { get; set; }        
     }
 }

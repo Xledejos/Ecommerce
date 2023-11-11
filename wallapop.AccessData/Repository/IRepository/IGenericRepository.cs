@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace wallapop.AccessData.Repository.IRepository
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericRepository<T> 
+        where T : class
     {
         Task<T?> GetById(int id);
         Task<IEnumerable<T>> GetAll(
