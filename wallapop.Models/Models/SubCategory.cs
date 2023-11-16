@@ -8,11 +8,11 @@ using wallapop.Models.Enums;
 
 namespace wallapop.Models.Models
 {
-    public class Category
+    public class SubCategory
     {
-        [Key]
+        [Required]
         public int Id { get; set; }
         [Required]
-        public CategoryEnum CategoryEnum { get; set; }
+        public SubCatEnum SubCatEnum { get; set; }
     }
 }

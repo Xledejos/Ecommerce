@@ -13,6 +13,7 @@ namespace wallapop.AccessData.DbContext
         }
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }   
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
