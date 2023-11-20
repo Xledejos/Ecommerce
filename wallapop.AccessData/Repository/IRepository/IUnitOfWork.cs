@@ -8,6 +8,7 @@ namespace wallapop.AccessData.Repository.IRepository
 {
     public interface IUnitOfWork : IDisposable
     {
+        ICategoryRepository CatRepo { get; }
         Task Save();
     }
 }

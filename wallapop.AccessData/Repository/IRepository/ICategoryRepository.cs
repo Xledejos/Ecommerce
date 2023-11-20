@@ -1,0 +1,15 @@
+﻿using Microsoft.EntityFrameworkCore.Query.Internal;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using wallapop.Models.Models;
+
+namespace wallapop.AccessData.Repository.IRepository
+{
+    public interface ICategoryRepository : IGenericRepository<Category>
+    {
+        void Update(Category category);
+    }
+}

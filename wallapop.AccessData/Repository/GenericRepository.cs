@@ -11,7 +11,7 @@ using wallapop.AccessData.Repository.IRepository;
 namespace wallapop.AccessData.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T>
-        where T : class, IEquatable<int>
+        where T : class
     {
         private readonly ApplicationDbContext _context;
         protected DbSet<T> Entities => _context.Set<T>();

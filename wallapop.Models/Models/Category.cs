@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wallapop.Models.Enums;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace wallapop.Models.Models
 {
@@ -13,6 +7,7 @@ namespace wallapop.Models.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public CategoryEnum CategoryEnum { get; set; }
+        [MaxLength(50, ErrorMessage = "Por favor pon un nombre")]
+        public string Name { get; set; }
     }
 }
