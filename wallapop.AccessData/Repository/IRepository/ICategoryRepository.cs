@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using wallapop.Models.Models;
+using wallapop.Models;
 
 namespace wallapop.AccessData.Repository.IRepository
 {

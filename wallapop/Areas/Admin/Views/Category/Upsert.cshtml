@@ -1,0 +1,47 @@
+﻿
+@model Category
+
+@{
+    // ViewData["Title"] = "Upsert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Crear Categoría";
+}
+
+<form method="post" class="mx-auto p-2" style="width:600px">
+    <div class="container">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        @if(Model.Id != 0)
+        {
+            titulo = "Actualizar Categoría";
+            <input type="hidden" asp-for="Id" />
+        }
+
+        <div>
+            <h2 class="text-success">@titulo</h2>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label col-form-label-sm">Nombre</label>
+            <input asp-for="Name" class="form-control form-control-sm" type="text" placeholder="Por favor coloca un nombre" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div>
+            @if(Model.Id != 0)
+            {
+                // Actualizar
+                <partial name="_BotonesActualizar" model="Model.Id"/>
+            }
+            else
+            {
+                // Crear
+                <partial name="_BotonesCrear" />
+            }
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+}

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using wallapop.AccessData.DbContext;
 using wallapop.AccessData.Repository.IRepository;
-using wallapop.Models.Models;
+using wallapop.Models;
 
 namespace wallapop.AccessData.Repository
 {

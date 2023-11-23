@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace wallapop.Models.Models
+namespace wallapop.Models
 {
     public class Category
     {

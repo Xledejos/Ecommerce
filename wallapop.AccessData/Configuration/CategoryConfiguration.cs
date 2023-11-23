@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations;
-using wallapop.Models.Models;
+using wallapop.Models;
 
 namespace wallapop.AccessData.Configuration
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using wallapop.Models.Models;
+using wallapop.Models;
 
 namespace wallapop.AccessData.DbContext
 {

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-wallapop-a4bdf5db-ae97-45d6-8eab-b3dbf1e8c9ce</UserSecretsId>
   </PropertyGroup>
