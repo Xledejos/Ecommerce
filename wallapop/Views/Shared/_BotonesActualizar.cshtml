@@ -2,8 +2,10 @@
 @model int
 
 <div class="d-grid gap-2 d-md-block">
-	<a asp-action="Index" type="button" class="btn btn-light">
+	<a asp-action="Index" class="btn btn-light">
 		<i class="bi bi-arrow-left"></i> Atras
 	</a>
-	<button class="btn btn-success" type="submit" asp-route-id="@Model">Actualizar</button>
+	<button class="btn btn-success" type="submit" asp-route-id="@Model">
+		Actualizar
+	</button>
 </div>

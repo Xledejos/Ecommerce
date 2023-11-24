@@ -1,0 +1,36 @@
+﻿
+@model Category
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" style="width:600px">
+    <input asp-for="Id" disabled />
+    <div class="container">
+        <div class="row">
+            <div class="col text-danger">
+                <h2>Eliminar Categoría</h2>
+            </div>
+        </div>
+        <br />
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Nombre</label>
+            <input asp-for="Name" class="form-control" disabled />
+        </div>
+
+        <div>
+            <partial name="_BotonesEliminar" />
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial.cshtml" />
+}
+
+
+
+

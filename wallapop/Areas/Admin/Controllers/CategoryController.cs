@@ -33,7 +33,7 @@ namespace wallapop.Areas.Admin.Controllers
 
             category = await _unitOfWork.CatRepo.GetById(id.GetValueOrDefault());
 
-            if(id == null)
+            if(category == null)
             {
                 return NotFound();
             }
@@ -65,11 +65,16 @@ namespace wallapop.Areas.Admin.Controllers
             return View(category);
         }
 
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Eliminar(int? id)
         {
-            var category = await _unitOfWork.CatRepo.GetById(id);
+            //if(id == null)
+            //{
+            //    return NotFound();
+            //}
 
-            if(category.Id == null)
+            var category = await _unitOfWork.CatRepo.GetById(id.GetValueOrDefault());
+
+            if(category == null)
             {
                 return NotFound();
             }
